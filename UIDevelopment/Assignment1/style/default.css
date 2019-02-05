@@ -1,0 +1,49 @@
+*{
+	font-family:Arial; Helvetica;
+	margin:0;
+	padding:0;
+}
+a,a:link,a:active,a:visited{
+	color:black;
+	text-decoration:none;
+}
+ul li{
+	list-style:none;
+}
+#Header
+{
+	background: #69f;
+	display: flex;
+}
+#Header ul{
+	flex:1;
+	text-align:center;
+	padding:10px 0;
+}
+#Header ul li{
+	display:inline-block;
+}
+#Header ul li a{
+	color:white;
+	padding: 10px;
+	display:inline-block;
+	transition:1s;
+	border-radius: 5px;
+	
+}
+#Header ul li a:hover{
+	
+	/*background: #fff;
+	color: #69f ;*/	
+}
+#Header ul li:nth-child(2) a{
+	background:#f96;
+	border-bottom: solid 3px #d74;
+}
+#Header ul li:nth-child(2) a:active{
+	margin-top:3px;
+	border:none;
+}
+#Header .logo{
+	height: 50px;
+}
