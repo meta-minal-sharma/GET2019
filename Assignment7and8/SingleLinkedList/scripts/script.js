@@ -41,25 +41,33 @@ function addNode()
 function deleteNode()
 {
     var element = document.getElementById('input').value;
-    var current = linkedlist.head; 
-    var prev = null; 
-    while (current != null) { 
-        if (current.element === element) { 
+    if(linkedlist.head == null)
+    {
+        document.getElementById("screen").innerHTML ="Linkedlist is empty";
+        return -1;
+    }
+    else
+    {
+	    var current = linkedlist.head; 
+	    var prev = null; 
+	    while (current != null) { 
+		if (current.element === element) { 
 
-            if (prev == null) { 
-                linkedlist.head = current.next; 
-            } else { 
-                prev.next = current.next; 
-            } 
-            linkedlist.size--; 
-            document.getElementById('screen').innerText = current.element+" Deleted!"; 
-            return 1;
-        } 
-        prev = current; 
-        current = current.next; 
-    } 
-    document.getElementById('screen').innerText = "Element not found!";
-    return -1; 
+		    if (prev == null) { 
+			linkedlist.head = current.next; 
+		    } else { 
+			prev.next = current.next; 
+		    } 
+		    linkedlist.size--; 
+		    document.getElementById('screen').innerText = current.element+" Deleted!"; 
+		    return 1;
+		} 
+		prev = current; 
+		current = current.next; 
+	    } 
+	    document.getElementById('screen').innerText = "Element not found!";
+	    return -1;
+    }
 
 }
 
