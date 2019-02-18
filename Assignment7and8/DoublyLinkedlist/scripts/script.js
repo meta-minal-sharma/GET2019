@@ -41,31 +41,36 @@ function addNode()
 function deleteNode()
 {
     var element = document.getElementById('input').value;
-     var current = linkedlist.head; 
-    var prev = null; 
-    while (current) {  
-        
-        if (current.element === element) { 
+    if(linkedlist.head == null)
+        document.getElementById("screen").innerHTML ="Linkedlist is empty";
+        return -1; 
+    else
+    {
+        var current = linkedlist.head; 
+        var prev = null; 
+        while (current) {  
 
-            if (current == linkedlist.head && current == linkedlist.tail) { 
-                linkedlist.head = null;
-                linkedlist.tail = null; 
-            } else if(current == linkedlist.head) {
-                linkedlist.head = linkedlist.head.next;
-                linkedlist.tail = null;
-            } else if(current == linkedlist.tail) {
-                linkedlist.tail = linkedlist.tail.prev;
-                linkedlist.tail.next = null;
-            } else {
-                current.prev.next = current.next;
-                current.next.prev = current.prev;
-            }
-            linkedlist.size--; 
-            document.getElementById('screen').innerText = current.element+" Deleted!"; 
-            return 1;
+            if (current.element === element) { 
+
+                if (current == linkedlist.head && current == linkedlist.tail) { 
+                    linkedlist.head = null;
+                    linkedlist.tail = null; 
+                } else if(current == linkedlist.head) {
+                    linkedlist.head = linkedlist.head.next;
+                    linkedlist.tail = null;
+                } else if(current == linkedlist.tail) {
+                    linkedlist.tail = linkedlist.tail.prev;
+                    linkedlist.tail.next = null;
+                } else {
+                    current.prev.next = current.next;
+                    current.next.prev = current.prev;
+                }
+                linkedlist.size--; 
+                document.getElementById('screen').innerText = current.element+" Deleted!"; 
+                return 1;
+            } 
+            current = current.next; 
         } 
-        current = current.next; 
-    } 
     document.getElementById('screen').innerText = "Element not found!";
     return -1; 
 
