@@ -72,7 +72,8 @@ function deleteNode()
             current = current.next; 
         } 
     document.getElementById('screen').innerText = "Element not found!";
-    return -1; 
+    return -1;
+    }
 
 }
 
