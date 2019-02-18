@@ -42,8 +42,10 @@ function deleteNode()
 {
     var element = document.getElementById('input').value;
     if(linkedlist.head == null)
+    {
         document.getElementById("screen").innerHTML ="Linkedlist is empty";
-        return -1; 
+        return -1;
+    }
     else
     {
         var current = linkedlist.head; 
