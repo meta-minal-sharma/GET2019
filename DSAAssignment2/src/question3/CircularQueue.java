@@ -1,8 +1,5 @@
 package question3;
 import java.util.Date;
-
-import question4.MyLogFile;
-
 public class CircularQueue<T> implements Queue<T> {
 
     private int front;
@@ -35,7 +32,6 @@ public class CircularQueue<T> implements Queue<T> {
     @Override
     public T remove() {
         if (isEmpty()) {
-            MyLogFile.writeToFile("Message: Queue is Empty Time:"+new Date()+"\n");
             throw new AssertionError("Queue is Empty");
         }
         T element = queue[front];
@@ -66,7 +62,6 @@ public class CircularQueue<T> implements Queue<T> {
         if (!isEmpty()) {
             return queue[front];
         } else {
-            MyLogFile.writeToFile("Message: Queue is Empty Time:"+new Date()+"\n");
             throw new AssertionError("Queue is empty");
         }
     }
