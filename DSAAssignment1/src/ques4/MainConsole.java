@@ -11,7 +11,7 @@ public class MainConsole {
 
     public static void main(String args[]) {
         int choice = 0;
-        char var = 97;
+        char var;
         List<Term> termList = new ArrayList<Term>();
 
         while (choice != 9) {
@@ -28,7 +28,9 @@ public class MainConsole {
                 double coefficient = getValidDouble();
                 System.out.println("Power (int): ");
                 int power = getValidInteger();
-                Variable variable = new Variable(var++, power);
+                System.out.println("Variable (char): ");
+                var = sc.next().charAt(0);
+                Variable variable = new Variable(var, power);
                 Term term = new Term(coefficient, variable);
                 termList.add(term);
                 break;
@@ -82,3 +84,4 @@ public class MainConsole {
         return value;
     }
 }
+
