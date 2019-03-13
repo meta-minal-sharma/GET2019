@@ -1,9 +1,6 @@
 package question1;
 import java.util.Date;
 import java.util.Stack;
-
-import question4.MyLogFile;
-
 public class EvaluatePostfix {
 
     Stack<Double> stack = new Stack<Double>();
@@ -48,18 +45,12 @@ public class EvaluatePostfix {
                         stack.push(value3 * value2);
                     } else if (value1 == '/') {
                         if (value2 == 0) {
-                            MyLogFile
-                                    .writeToFile("Message:number cannot be divided by zero Time:"
-                                            + new Date() + "\n");
                             throw new AssertionError(
                                     "number cannot be divided by zero ");
                         }
                         stack.push(value3 / value2);
 
                     } else {
-                        MyLogFile
-                                .writeToFile("Message: Incorrect operator Time:"
-                                        + new Date() + "\n");
                         throw new AssertionError("Enter correct operator");
                     }
                 }
@@ -70,8 +61,6 @@ public class EvaluatePostfix {
         }
 
         if (stack.size() != 1) {
-            MyLogFile.writeToFile("Message: Incorrect Expression Time:"
-                    + new Date() + "\n");
             throw new AssertionError("Invalid Expression");
         }
         return stack.pop();
