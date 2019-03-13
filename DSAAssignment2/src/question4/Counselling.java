@@ -46,11 +46,10 @@ public class Counselling {
         } catch (BiffException e) {
             // excelFileNotFound excelFileTooBig expectedGlobals
             // passwordProtected
-            MyLogFile.writeToFile("Message:" + e.getMessage() + " Time:"
-                    + new Date() + "\n");
+            e.printStckTrace();
+            
         } catch (IOException e) {
-            MyLogFile.writeToFile("Message:" + e.getMessage() + " Time:"
-                    + new Date() + "\n");
+            e.printStckTrace();
         }
 
     }
@@ -108,8 +107,7 @@ public class Counselling {
             workbook.write();
             workbook.close();
         } catch (Exception e) {
-            MyLogFile.writeToFile("Message:" + e.getMessage() + " Time:"
-                    + new Date() + "\n");
+           e.printStckTrace();
         }
 
     }
@@ -138,11 +136,9 @@ public class Counselling {
                 queue.add(student);
             }
         } catch (BiffException e) {
-            MyLogFile.writeToFile("Message:" + e.getMessage() + " Time:"
-                    + new Date() + "\n");
+           e.printStckTrace();
         } catch (IOException e) {
-            MyLogFile.writeToFile("Message:" + e.getMessage() + " Time:"
-                    + new Date() + "\n");
+            e.printStckTrace();
         }
     }
 }
