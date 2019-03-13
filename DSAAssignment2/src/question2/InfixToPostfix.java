@@ -2,9 +2,6 @@ package question2;
 
 import java.util.Date;
 import java.util.Stack;
-
-import question4.MyLogFile;
-
 public class InfixToPostfix {
     String infixExp;
     Stack<String> stack = new Stack<String>();
@@ -44,9 +41,6 @@ public class InfixToPostfix {
                     if (!(stack.isEmpty()) && "(".equals(stack.peek())) {
                         stack.pop();
                     } else if (stack.isEmpty()) {
-                        MyLogFile
-                                .writeToFile("Message:invalid expression: open paranthasis not found for close paranthasis Time:"
-                                        + new Date() + "\n");
                         throw new AssertionError(
                                 "invalid expression: open paranthasis not found for close paranthasis");
                     }
@@ -77,9 +71,6 @@ public class InfixToPostfix {
         }
         while (!(stack.isEmpty())) {
             if ("(".equals(stack.peek())) {
-                MyLogFile
-                        .writeToFile("Message:invalid expression: close paranthasis not found for open paranthasis Time:"
-                                + new Date() + "\n");
                 throw new AssertionError(
                         "invalid expression: close paranthasis not found for open paranthasis");
             }
