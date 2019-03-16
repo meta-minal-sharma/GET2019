@@ -16,7 +16,7 @@ public class MainConsole {
     private static Scanner sc = new Scanner(System.in);
     public static void main(String args[]) throws FileNotFoundException, IOException, ParseException {
         
-        File file = new File("src/question3/input.json");
+        File file = new File("src/ques3/input.json");
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader(file));
         NestedListOperation nestedOperations = new NestedListOperation(jsonObject);
