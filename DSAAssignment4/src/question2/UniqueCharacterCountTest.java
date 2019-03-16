@@ -5,15 +5,12 @@ import org.junit.Test;
 
 public class UniqueCharacterCountTest {
 	 CountCharacter cc = new CountCharacter();
-	@Test
-	public void uniqueCharTest1() {
-		assertEquals(4,cc.countChar("anurag"));	
-		assertEquals(6,cc.countChar("jianurag"));
-		assertEquals(1,cc.countChar("maa"));
-		assertEquals(1,cc.countChar("maa"));
-		assertEquals(9,cc.countChar("jianuragklmaa"));
-		assertEquals(12,cc.countChar("prejianuragklmaa"));
-		assertEquals(6,cc.countChar("anuragji"));
-	}
+	 @Test
+		public void testUniqueCharacter() {
+			assertEquals(1, cc.numberOfUniqueCharacter("mmmmmmmmmn"));
+			assertEquals(3, cc.numberOfUniqueCharacter("hello"));
+			assertEquals(1, cc.numberOfUniqueCharacter("malyalam"));
+			assertEquals(8, cc.numberOfUniqueCharacter("asdfgghjkl"));
+		}
 	
 }
